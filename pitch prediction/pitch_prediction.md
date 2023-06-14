@@ -1,5 +1,5 @@
 # Pitch prediction
-This page is for giving a info about the python codes in this folder.  
+This page is for giving info about the python codes in this folder.  
 
 ### Classification_Model_Generator.ipynb  
 This notebook is a code that generates single classificator for the pitcher that is set on the first part of the code.  
