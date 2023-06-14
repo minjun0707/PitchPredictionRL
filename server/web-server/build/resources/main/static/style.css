@@ -1,0 +1,16 @@
+#up-arrow,#down-arrow{
+    width: 10px;
+    height: 10px;
+  }
+  #total-count{
+    font-weight: 900;
+    font-size: 30px;
+  }
+  .container-count{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  

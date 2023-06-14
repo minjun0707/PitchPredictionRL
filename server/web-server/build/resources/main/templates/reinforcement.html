@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reinforcement</title>
+
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        function pitchDetection() {
+            // production
+             window.location.href = 'https://pitchingbaseball.duckdns.org';
+            // local
+            //window.location.href = 'http://localhost:8080/';
+        }
+
+    </script>
+
+    <script>
+        function pitchTipping() {
+            // production
+            window.location.href = 'https://pitchingbaseball.duckdns.org/pitch-tipping';
+            // local
+            //window.location.href = 'http://localhost:8080/pitch-tipping';
+        }
+
+    </script>
+
+    <script>
+        function reinforcement() {
+            // production
+            window.location.href = 'https://pitchingbaseball.duckdns.org/reinforcement';
+            // local
+            //window.location.href = 'http://localhost:8080/reinforcement';
+        }
+
+    </script>
+
+</head>
+<body>
+
+<button id="submit3" type="button" onclick="pitchDetection()">pitch-detection</button>
+<button id="submit4" type="button" onclick="pitchTipping()">pitch-tipping</button>
+<button id="submit5" type="button" onclick="reinforcement()">reinforcement Learning </button>
+
+<h1> reinforcement Learning  </h1>
+
+</body>
+</html>

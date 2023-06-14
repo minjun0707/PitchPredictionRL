@@ -1,0 +1,689 @@
+
+<!doctype html>
+<html class="h-100" lang="en">
+  
+
+  <head>
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
+  <link rel="stylesheet" type="text/css" href="css/component.css" />
+  <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  <script src="js/modernizr.custom.js"></script>
+  <meta name="author" content="Holger Koenemann">
+  <meta name="generator" content="Eleventy v2.0.0">
+  <meta name="HandheldFriendly" content="true">
+  <title>About</title>
+  <link rel="stylesheet" href="css/theme.min.css">
+
+   <style>
+
+
+html.modal-active,
+body.modal-active {
+  overflow: hidden;
+}
+#modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: table;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  /* hidden 처리 */
+  transform: scale(0);
+}
+#modal-container .modal-background {
+  display: table-cell;
+  background: rgba(0, 0, 0, .8);
+  text-align: center;
+  vertical-align: middle;
+}
+#modal-container .modal-background .modal {
+  background: rgba(63, 62, 62, 0.9);
+  padding: 20px;
+  display: inline-block;
+  border-radius: 10px;
+  position: relative;
+  width: 700px;
+  height: 475px;
+}
+#modal-container .modal-background .modal h2 {
+  font-size: 25px;
+  line-height: 25px;
+  margin-bottom: 15px;
+  
+}
+#modal-container .modal-background .modal p {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+
+/*
+ * ------------------------------
+ * Unfolding Animation
+ * ------------------------------
+ */
+ #modal-container.one {
+	/*transform: scaleX(0) scaleY(1);*/
+	animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.one .modal-background .modal {
+	/* 초기 display: none 처럼 크기를 0 으로 하여 보여주지 않음*/
+	transform: scale(0);
+	/* 0.5 초 동안 애니메이션을 실행, 단 0.8초 지연시켜 0.8초 후에 애니메이션을 실행 */
+	animation: zoomIn .5s .8s  cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.one.out {
+	transform: scale(1);
+	animation: unfoldOut 1s .3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.one.out .modal-background .modal {
+	animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+
+
+/* Dimmed showing */
+@keyframes unfoldIn {
+	0% {
+		transform: scaleX(0) scaleY(0.005);
+	}
+	50% {
+		/* 0.5 초간 세로 크기는 작은상태로 가로 너비만 확대  */
+		transform: scaleX(1) scaleY(0.005);
+	}
+	100% {
+		/* 0.5 초간 세로 크기를 확대 */
+		transform: scaleY(1) scaleX(1);
+	}
+}
+/* Show modal content  */
+@keyframes zoomIn {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+/* Hide modal content */
+@keyframes zoomOut {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(0);
+	}
+}
+/* Dimmed hiding */
+@keyframes unfoldOut {
+	0% {
+		transform: scale(1)
+	}
+	50% {
+		transform: scaleX(1) scaleY(0.005);
+	}
+	100% {
+		transform: scaleX(0) scaleY(0.005);
+	}
+}
+
+
+/* inter-300 - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local(''),
+       url('fonts/inter-v12-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('fonts/inter-v12-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* inter-400 - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local(''),
+       url('fonts/inter-v12-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('fonts/inter-v12-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local(''),
+       url('fonts/inter-v12-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('fonts/inter-v12-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local(''),
+       url('fonts/inter-v12-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('fonts/inter-v12-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+</style>
+
+
+  </head>
+
+
+  <body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
+
+    <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-3" tabindex="0">
+  <div class="container">
+    <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="index.html">
+
+
+  <!-- icon -->
+  <img src="front-img/baseball-icon.png" width="30" height="30" fill="currentColor" class="bi bi-stack" viewBox="0 0 16 16">
+    
+
+
+  <!-- 제목 -->
+  <span class="ms-md-1 mt-1 fw-bolder me-md-5">Predicting Pitch Type</span>
+</a>
+
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
+      <li class="nav-item">
+  <a class="nav-link fs-5" href="index.html" aria-label="Homepage">
+    
+  </a>
+</li>
+<!-- <li class="nav-item">
+  <a class="nav-link fs-5" href="index.html" aria-label="A sample content page">
+    Home
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link fs-5" href="system.html" aria-label="A system message page">
+    Home
+  </a>
+</li> -->
+
+    </ul>
+      
+</div>
+</nav>
+
+    <main>
+      <div class="container">
+  <div class="row d-flex justify-content-center py-vh-2 pb-0">
+    <div class="col-12 col-lg-10 col-xl-8">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="display-1 fw-bold" style="text-align:center">
+
+
+            <br>
+            Predicting <br> Next Pitch Type</h2>
+       
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 py-vh-2 " >
+       <img style="margin-right: 30px;"src="front-img/batter.jpeg" width="500" height="400px" alt="abstract image" class="img-fluid position-relative rounded-5 shadow" data-aos="zoom-in-left" data-aos-duration="3000" >
+       <img src="front-img/pitcher.jpeg" width="500" height="500" alt="abstract image" class="img-fluid position-absolute rounded-5 shadow" data-aos="zoom-in-right" data-aos-duration="3000" >
+      </div>
+
+      
+    </div>
+
+
+    <div class="row">
+        <!-- <div class="col-12 col-lg-10 col-xl-10"> -->
+      <div class="row d-flex align-items-start" data-aos="fade-right" data-aos-duration="3000">
+        <div class="col-12 col-lg-7">
+          <h2 style="width: 500px;" class="h3 mt-5 border-top pt-5"></h2>
+          
+          <!-- div생성 -->
+          <div class="col-3 bg-black" style='height: 200px; position: relative; margin-left: 50px; margin-top: 20px;'>
+            
+        
+            
+
+            <!-- 점수 div -->
+
+            <div style="position: absolute">
+              
+              <div class="col-3 bg-black" style='float: left; position: relative; border-right: 2px solid #666666;width: 40px;'>
+
+
+                <div class="input-container" style="position: absolute; top: -55px;">
+                  <input
+                    type="text"
+                    id="input"
+                    placeholder="Pitcher"
+                    autocomplete="off"
+                  />
+                  
+                  <span id="suggestion"></span>
+                </div>
+
+      
+
+                <div id="increment-count">
+                  <input type="image" id="up-arrow" src="front-img/up.png" style="width: 30px; margin-left: 3px;" />
+                </div>
+                <div class ="display-5 fw-bold"id="total-count" style="margin-left: 11px;">
+                </div>
+                <div id="decrement-count">
+                  <input type="image" id="down-arrow" src="front-img/down.png" style="width: 30px; margin-left: 3px"/>
+                </div>
+              </div> 
+              
+              <div class="col-3 bg-black" style='float: left; position: relative; border-right: 2px solid #666666;width: 100px;'>
+                <div style="position: absoulte; border-bottom: 2px solid #666666;">
+                  <img src="front-img/teamA.png" width="42px" height="42px" >
+                  <input class = "display-5 fw-bold" type="text" id = "score_a" name="score_difference" value="1" style="width: 35px;  text-align:center; border-radius: 5px;">
+                </div>
+  
+                <div>
+                  <img src="front-img/teamB.png" width="42px" height="42px" >
+                  <input class = "display-5 fw-bold" type="text" id = "score_b" name="score_difference" value="1" style="width: 35px; text-align:center; border-radius: 5px">
+                </div>
+              </div>      
+  
+              <!-- 볼카운트 div -->
+  
+              <div class="col-3 bg-black" style='float: left; position: relative;'>
+                <div style="position: absoulte; margin-left: 10px;" >
+                  <span class = "display-5 fw-bold">S</span>
+                  <img id = "strike_1" onclick="clickFirstStrike()" src="front-img/gray.png" width="25px" height="25px" style="margin-bottom: 7px; margin-left: 2px;">
+                  <img id = "strike_2" onclick="clickSecondStrike()" src="front-img/gray.png" width="25px" height="25px" style="margin-bottom: 7px;">
+                </div>
+  
+                <div style="margin-left: 10px;" >
+                  <span class = "display-5 fw-bold">B</span>
+                  <img  id = "ball_1" onclick="clickFirstBall()" src="front-img/gray.png" width="25px" height="25px" style="margin-bottom: 5px; margin-left: 2px;" >
+                  <img  id = "ball_2" onclick="clickSecondBall()" src="front-img/gray.png" width="25px" height="25px" style="margin-bottom: 5px;">
+                  <img  id = "ball_3" onclick="clickThirdBall()" src="front-img/gray.png" width="25px" height="25px" style="margin-bottom: 5px; ">
+                </div>
+
+                <div style="margin-bottom: 10px; margin-left: 10px;">
+                  <span class = "display-5 fw-bold">O</span>
+                  <img  id = "out_1" onclick="clickFirstOut()" src="front-img/gray.png" width="25px" height="25px" style="margin-bottom: 0px;">
+                  <img  id = "out_2" onclick="clickSecondOut()" src="front-img/gray.png" width="25px" height="25px" style="margin-bottom: 0px;">
+                </div>
+              </div>    
+  
+              <!-- 베이스 div -->
+  
+              <div class="bg-black" style='float: left; position: relative; height: 100px; width: 180px;'>
+                
+
+                <img id = "on_3b" onclick="clickThirdBase()" src="front-img/base-gray.png" width="40px" height="40px" style="bottom: -30px; right: -16px; position: relative; " >
+                <img id = "on_2b" onclick="clickSecondBase()" src="front-img/base-gray.png" width="40px" height="40px" style="bottom: -5px; right: 5px; position: relative;" >
+                <img  src="front-img/green.png" width="40px" height="40px" style="bottom: -53px; right: 49px;position: relative;" >
+                <img id = "on_1b" onclick="clickFirstBase()" src="front-img/base-gray.png" width="40px" height="40px" style="bottom: -28px; right: 70px;position: relative;" >
+
+
+
+            
+          
+               
+              </div>   
+  
+
+            </div>
+
+
+            <!-- 이전투구 div -->
+            <div style="bottom: 65px; position: absolute;">
+              <img src="front-img/pitch_num.png" width="25px" height="25px" >
+              <input class = "display-6 fw-bold" type="text" id = "pitch_number" name="pitch_number" value="1" style="width: 40px;text-align:center; border-radius: 5px;" >
+              
+
+              <!-- <span class = "display-5 fw-bold">
+                pre1 pre2 pre3
+
+              </span> -->
+
+              
+                <select id="pre1" class = "display-6 fw-bold" name="language" style="width: 75px; margin-left: 30px;">
+                  <option value="0">pre1</option>
+                  <option value="1">Fastball</option>
+                  <option value="2">Curveball</option>
+                  <option value="3">Slider</option>
+                  <option value="4">ChangeUp</option>
+                  <option value="5">Sinker</option>
+                </select>
+
+                <select id="pre2" class = "display-6 fw-bold" name="language" style="width: 75px; margin-left: 5px;">
+                  <option value="0">pre2</option>
+                  <option value="1">Fastball</option>
+                  <option value="2">Curveball</option>
+                  <option value="3">Slider</option>
+                  <option value="4">ChangeUp</option>
+                  <option value="5">Sinker</option>
+                </select>
+
+                <select id="pre3" class = "display-6 fw-bold" name="language" style="width: 75px; margin-left: 5px;">
+                  <option value="0">pre3</option>
+                  <option value="1">Fastball</option>
+                  <option value="2">Curveball</option>
+                  <option value="3">Slider</option>
+                  <option value="4">ChangeUp</option>
+                  <option value="5">Sinker</option>
+                </select>
+
+              
+
+
+              <!-- right : <input type="radio" name="stand" value="right" checked>
+              left : <input type="radio" name="stand" value="left"> -->
+
+
+            </div>
+            
+
+            <div style="bottom: 20px; position: absolute;">
+              Left : <input type="radio" name="stand" value="right" checked>
+              Right : <input type="radio" name="stand" value="left"> 
+
+
+            </div>
+
+            <div style="bottom: 0px; position: absolute;">
+            </div>
+            
+            
+            
+            
+
+          </div>
+
+
+
+          
+        </div>
+        <div class="col-12 col-lg-4 offset-lg-1 p-5 mt-5">
+
+          <div class="progress-button">
+            <button id="one" class="button" onclick="clickPredict()"><span>Predict</span></button>
+            <svg class="progress-circle" width="70" height="70"><path d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z"/></svg>
+            <svg class="checkmark" width="70" height="70"><path d="m31.5,46.5l15.3,-23.2"/><path d="m31.5,46.5l-8.5,-7.1"/></svg>
+            <svg class="cross" width="70" height="70"><path d="m35,35l-9.3,-9.3"/><path d="m35,35l9.3,9.3"/><path d="m35,35l-9.3,9.3"/><path d="m35,35l9.3,-9.3"/></svg>
+             <!-- <button id="one" class="button">Unfolding</button>
+              <button onclick="ajax()">ajax</button>
+              <textarea id="resultText">result</textarea> -->
+          </div>
+          
+          
+          <!-- /progress-button -->
+        
+      
+      </div>
+
+    </div>
+  </div>
+
+
+  
+  <div id="modal-container" style="z-index: 1000;">
+    <div class="modal-background">
+      <div class="modal" style="width: 1000px">
+
+        <div>
+          <div style="width: 200px; margin-top: 15px;">
+
+            <span class="fw-bolder" style="position:absolute; left: 120px; text-align: center;"> Predicted Pitch </span>
+            <span class="fw-bolder" style="position:absolute; left: 400px; text-align: center;">  Recommended Decision </span>
+            <span class="fw-bolder" style="position:absolute; left: 750px; text-align: center;">  Pitching Motion </span>
+            
+          </div>
+        </div>
+          
+       
+
+        
+        <br>
+        <div style="margin-top: 20px; margin-bottom: 30px;">
+          <img src="front-img/pitchBall.png" width="250px" height="250px" style = "float: left; margin-left: 50px;">
+          <img id="actionImg" src="front-img/hit-remove.png"S width="250px" height="300px" style = "float: left; margin-left: 50px;">
+          <iframe src="https://streamable.com/m/tyler-glasnow-ball-to-will-smith?partnerId=web_video-playback-page_video-share" width="300" height="300" frameborder="0" allowfullscreen style = "margin-left: 30px;";></iframe>
+        </div>
+        
+        <div>
+          <div style="width: 200px; margin-top: 15px;">
+            <span id ="pitchType" class="fw-bolder" style="position:absolute; left: 145px; text-align: center; bottom: 20px;">  </span>
+            <span id ="action"class="fw-bolder" style="position:absolute; left: 480px; text-align: center; bottom: 20px;"> </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+
+    </main>
+
+    <footer class="bg-black border-top border-dark mt-5">
+  
+  <div class="container text-center small py-vh-2 border-top border-dark">Predicting Pitch Type
+    <!-- <a href="https://templatedeck.com" class="link-fancy link-fancy-light" target="_blank">templatedeck.com</a> -->
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js">
+</script>
+
+<script src="function-js/ballCount.js">
+</script>
+
+<script src="function-js/base.js">
+</script>
+
+<script src="function-js/inning.js">
+</script>
+
+
+
+<script src="function-js/ajax.js">   
+</script>
+
+<script src="function-js/test.js">
+</script>
+
+<script src="function-js/modalResult.js">
+</script>
+
+<script src="function-js/suggest.js">
+</script>
+    
+<script src="js/classie.js"></script>
+<script src="js/uiProgressButton.js"></script>
+
+
+
+
+<script>
+  
+  // if (selectedValue === "") {
+  //   return false; // 선택된 값이 없을 때 false를 리턴
+  // }
+
+// var input = document.getElementById("input").value;
+
+// //변경
+// if (input === "") {
+//   return false; // 입력값이 없을 때 false를 리턴
+// }
+
+  
+
+  [].slice.call( document.querySelectorAll( '.progress-button' ) ).forEach( function( bttn, pos ) {
+
+    
+      new UIProgressButton( bttn, {
+        
+          callback : function( instance ) {
+                      
+              var progress = 0,
+                  interval = setInterval( function() {
+                    
+                      progress = Math.min( progress + Math.random() * 0.1, 1 );
+                      instance.setProgress( progress );
+
+                      if( progress === 1 ) {
+                          instance.stop( pos === 1 || pos === 3 ? -1 : 1 );
+                          clearInterval( interval );
+                      }
+                      //변경
+                      //200
+                  }, 200 );
+          }
+      } );
+
+  } );
+
+</script>
+
+
+
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/aos.js"></script>
+
+<script>
+
+var $button         = $('.button'),
+    $modalContainer = $('#modal-container'),
+    $body           = $('body'),
+    $content        = $('.content'),
+    btnId;
+
+    function clickPredict() {
+
+      //변경
+    
+
+      ajax();
+      //변경
+      // setTimeout(() => displayModal(), 5000);   
+      setTimeout(() => displayModal(), 5000); 
+    }
+</script>
+<script>
+  function displayModal() {
+
+    //변경
+  //   var selectElement = document.getElementById("pre3");
+  //   var selectedValue = selectElement.value;
+
+  //   if (selectedValue == 0) {
+  //   window.alert("값을 입력해주세요")
+  //   return false; 
+  // }
+
+
+    btnId = $(".button").attr('id');
+  
+  $modalContainer
+      .removeAttr('class')
+      .addClass(btnId);
+  $content
+      .removeAttr('class')
+      .addClass('content');
+  
+  $body.addClass('modal-active');
+  
+  if (btnId == 'two' || btnId == 'three'|| btnId == 'four') {
+    $content.addClass(btnId);
+
+  }
+  }
+
+</script>
+<script>
+  // $button.on('click', function () {
+//   btnId = $(this).attr('id');
+  
+//   $modalContainer
+//       .removeAttr('class')
+//       .addClass(btnId);
+//   $content
+//       .removeAttr('class')
+//       .addClass('content');
+  
+//   $body.addClass('modal-active');
+  
+//   if (btnId == 'two' || btnId == 'three'|| btnId == 'four') {
+//     $content.addClass(btnId);
+//   }
+  
+// });
+
+$modalContainer.on('click', function () {
+  $(this).addClass('out');
+  $body.removeClass('modal-active');
+  if ($(this).hasClass(btnId)) {
+    
+    $content.addClass('out');
+    
+  }
+});
+
+
+
+</script>
+
+
+
+
+
+
+
+<script>
+  AOS.init({
+  duration: 800, // values from 0 to 3000, with step 50ms
+  });
+</script>
+<script>
+  let scrollpos = window.scrollY
+  const header = document.querySelector(".navbar")
+  const header_height = header.offsetHeight
+
+  const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm")
+  const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm")
+
+  window.addEventListener('scroll', function() {
+    crollpos = window.scrollY;
+
+      if (scrollpos >= header_height) { add_class_on_scroll() }
+      else { remove_class_on_scroll() }
+
+      console.log(scrollpos)
+    })
+  </script>
+  
+  </body>
+</html>

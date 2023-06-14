@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Predictive Text</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+  </head>
+  <body>
+    <div class="input-container">
+      <input
+        type="text"
+        id="input"
+        placeholder="Pitcher"
+        autocomplete="off"
+      />
+      
+      <span id="suggestion"></span>
+    </div>
+    <!-- Script -->
+    <script src="function-js/suggest.js"></script>
+    <script src="csv.js"></script>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+  </body>
+</html>
