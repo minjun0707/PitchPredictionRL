@@ -36,7 +36,8 @@ python train.py
 ```
 
 3. Make predictions: Use the trained model to make pitch type predictions based on the current game situation and pitch tipping cues.  
-(* You can get the models trained by us from this Google Drive link.)
+(* You can get the models trained by us from <a href="www.google.com">this Google Drive link</a>)
+
 ```
 python predict.py
 ```
