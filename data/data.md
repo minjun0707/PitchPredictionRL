@@ -1,5 +1,5 @@
 # About this page  
-This page is for giving a info about this folder's files.
+This page is for giving info about this folder's files.
 
 ### ID_MAP.py 
 It is a python code that generates active MLB pitchers list in .csv.  
